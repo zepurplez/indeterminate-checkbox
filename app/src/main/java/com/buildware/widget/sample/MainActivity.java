@@ -14,6 +14,8 @@ import com.buildware.widget.indeterm.IndeterminateRadioButton;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final boolean TOAST = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,37 +26,39 @@ public class MainActivity extends AppCompatActivity {
         final IndeterminateCheckBox indetermCheckBox = (IndeterminateCheckBox) findViewById(R.id.indeterm_checkbox);
         final IndeterminateRadioButton radio = (IndeterminateRadioButton) findViewById(R.id.indeterm_radio);
 
-        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String stateText = isChecked ? "Checked" : "Unchecked";
-                Toast.makeText(MainActivity.this, "Standard CheckBox: " + stateText, Toast.LENGTH_SHORT).show();
-            }
-        });
+        if (TOAST) {
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    String stateText = isChecked ? "Checked" : "Unchecked";
+                    Toast.makeText(MainActivity.this, "Standard CheckBox: " + stateText, Toast.LENGTH_SHORT).show();
+                }
+            });
 
-        appCompatCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String stateText = isChecked ? "Checked" : "Unchecked";
-                Toast.makeText(MainActivity.this, "AppCompat CheckBox: " + stateText, Toast.LENGTH_SHORT).show();
-            }
-        });
+            appCompatCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    String stateText = isChecked ? "Checked" : "Unchecked";
+                    Toast.makeText(MainActivity.this, "AppCompat CheckBox: " + stateText, Toast.LENGTH_SHORT).show();
+                }
+            });
 
-        indetermCheckBox.setOnStateChangedListener(new IndeterminateCheckBox.OnStateChangedListener() {
-            @Override
-            public void onStateChanged(IndeterminateCheckBox check, @Nullable Boolean state) {
-                String stateText = (state != null) ? (state ? "Checked" : "Unchecked") : "Indeterminate";
-                Toast.makeText(MainActivity.this, "IndeterminateCheckBox: " + stateText, Toast.LENGTH_SHORT).show();
-            }
-        });
+            indetermCheckBox.setOnStateChangedListener(new IndeterminateCheckBox.OnStateChangedListener() {
+                @Override
+                public void onStateChanged(IndeterminateCheckBox check, @Nullable Boolean state) {
+                    String stateText = (state != null) ? (state ? "Checked" : "Unchecked") : "Indeterminate";
+                    Toast.makeText(MainActivity.this, "IndeterminateCheckBox: " + stateText, Toast.LENGTH_SHORT).show();
+                }
+            });
 
-        radio.setOnStateChangedListener(new IndeterminateRadioButton.OnStateChangedListener() {
-            @Override
-            public void onStateChanged(IndeterminateRadioButton radioButton, @Nullable Boolean state) {
-                String stateText = (state != null) ? (state ? "Checked" : "Unchecked") : "Indeterminate";
-                Toast.makeText(MainActivity.this, "IndeterminateRadioButton: " + stateText, Toast.LENGTH_SHORT).show();
-            }
-        });
+            radio.setOnStateChangedListener(new IndeterminateRadioButton.OnStateChangedListener() {
+                @Override
+                public void onStateChanged(IndeterminateRadioButton radioButton, @Nullable Boolean state) {
+                    String stateText = (state != null) ? (state ? "Checked" : "Unchecked") : "Indeterminate";
+                    Toast.makeText(MainActivity.this, "IndeterminateRadioButton: " + stateText, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
 
         findViewById(R.id.btn_indeterminate).setOnClickListener(new View.OnClickListener() {
             @Override
