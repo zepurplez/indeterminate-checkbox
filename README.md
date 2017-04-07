@@ -1,10 +1,10 @@
 # indeterminate-checkbox
-[![Tag](https://img.shields.io/github/tag/sevar83/indeterminate-checkbox.svg?label=JitPack)](https://jitpack.io/#sevar83/indeterminate-checkbox) [![License](https://img.shields.io/:license-apache_2.0-green.svg)](https://raw.githubusercontent.com/sevar83/indeterminate-checkbox/master/LICENSE) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-indeterminate--checkbox-green.svg?style=true)](https://android-arsenal.com/details/1/3224)
+[![Tag](https://img.shields.io/github/tag/SpiritCroc/indeterminate-checkbox.svg?label=JitPack)](https://jitpack.io/#SpiritCroc/indeterminate-checkbox) [![License](https://img.shields.io/:license-apache_2.0-green.svg)](https://raw.githubusercontent.com/SpiritCroc/indeterminate-checkbox/master/LICENSE) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-indeterminate--checkbox-green.svg?style=true)](https://android-arsenal.com/details/1/3224)
 
 
-![How they look like](https://raw.githubusercontent.com/sevar83/indeterminate-checkbox/master/art/screenshot1.png)
+![How they look like](https://raw.githubusercontent.com/SpiritCroc/indeterminate-checkbox/master/art/screenshot1.png)
 
-![Tags sample](https://raw.githubusercontent.com/sevar83/indeterminate-checkbox/master/art/3-state%20checkboxes.png)
+![Tags sample](https://raw.githubusercontent.com/SpiritCroc/indeterminate-checkbox/master/art/3-state%20checkboxes.png)
 
 Android CheckBox and RadioButton with additional 3rd 'indeterminate' state.
 
@@ -28,7 +28,7 @@ Android CheckBox and RadioButton with additional 3rd 'indeterminate' state.
 2. You need this in your app's module `build.gradle` file:
     ```Gradle
     dependencies {
-        compile 'com.github.sevar83:indeterminate-checkbox:1.0.5@aar'
+        compile 'com.github.SpiritCroc:indeterminate-checkbox:1.0.5@aar'
     }
     ```
 
@@ -105,7 +105,6 @@ indetermCheck.getState();
 #### Known Issues 
 - `IndeterminateRadionButton` is not animated. In order to make it animated I had to include about 120 PNG files from the
 Android Lollipop framework. Unlike the `CheckBox` widget the `RadioButton` has no vector animations in Lollipop yet. They still use PNGs. When (and if) Google switches to vectors I'm going to import them here too.
-- No animated transitions from/to 'indeterminate' state. That requires much higher animator skills than mine :)
 - Highlighting on pre-Lollipop seems not working or missing
 
 
