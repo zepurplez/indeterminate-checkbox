@@ -28,7 +28,7 @@ Android CheckBox and RadioButton with additional 3rd 'indeterminate' state.
 2. You need this in your app's module `build.gradle` file:
     ```Gradle
     dependencies {
-        compile 'com.github.SpiritCroc:indeterminate-checkbox:1.1@aar'
+        compile 'com.github.zepurplez:indeterminate-checkbox:1.1.5@aar'
     }
     ```
 
