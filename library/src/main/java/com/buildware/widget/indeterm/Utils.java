@@ -48,7 +48,7 @@ class Utils {
         final float disabledAlpha = resolveFloat(context, android.R.attr.disabledAlpha, 0.25f);
         final int[] colors = new int[]{
                 Utils.applyAlpha(normal, disabledAlpha),
-                normal,
+                activated,
                 activated,
                 normal
         };
